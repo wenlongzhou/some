@@ -28,9 +28,10 @@
 #### 微商城开发
 - 支付及分销模块
 ## 技能清单
-- 后端开发：熟悉PHP及面向对象开发,了解C
-- PHP框架：熟练使用 Yii / ThinkPHP
-- 前端框架：熟练使用 Bootstrap/jQuery
-- 数据相关：熟悉MySQL / Memcache / redis
+- 后端开发：熟悉PHP，熟悉面向对象设计及开发方法，了解常用的设计模式
+- PHP框架：Yii / ThinkPHP
+- 前端框架：Bootstrap/jQuery
+- 数据相关：MySQL / Memcache / redis
 - 版本管理：Svn / Git / Composer
-- 其他相关：拥有2台VPS主机,熟悉LNMP环境搭建,熟悉PHP相关拓展安装使用如：APC / Swoole
+- 服务器：拥有2台VPS主机，熟悉Linux的操作，熟悉LNMP环境搭建，熟悉PHP相关拓展安装使用如：APC / Swoole
+- 其他相关：对高并发，高负载的服务端架构有一定理解
