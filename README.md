@@ -28,12 +28,9 @@
 #### 微商城开发
 - 支付及分销模块
 ## 技能清单
-- Web开发：PHP/Hack/Node
-- Web框架：ThinkPHP/Yaf/Yii/Laravel/LazyPHP
-- 前端框架：Bootstrap/AngularJS/EmberJS/HTML5/Cocos2dJS/ionic
-- 前端工具：Bower/Gulp/SaSS/LeSS/PhoneGap
-- 数据库相关：MySQL/PgSQL/PDO/SQLite
-- 版本管理、文档和自动化部署工具：Svn/Git/PHPDoc/Phing/Composer
-- 单元测试：PHPUnit/SimpleTest/Qunit
-- 云和开放平台：SAE/BAE/AWS/微博开放平台/微信应用开发
-
+- 后端开发：熟悉PHP及面向对象开发,了解C
+- PHP框架：熟练使用 Yii / ThinkPHP
+- 前端框架：熟练使用 Bootstrap/jQuery
+- 数据相关：熟悉MySQL / Memcache / redis
+- 版本管理：Svn / Git / Composer
+- 其他相关：拥有2台VPS主机,熟悉LNMP环境搭建,熟悉PHP相关拓展安装使用如：APC / Swoole
