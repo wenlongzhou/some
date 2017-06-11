@@ -30,7 +30,7 @@
 ## 技能清单
 - 后端开发：熟悉PHP，熟悉面向对象设计及开发方法，了解常用的设计模式
 - PHP框架：Yii / ThinkPHP
-- 前端框架：Bootstrap/jQuery
+- 前端框架：Bootstrap / jQuery
 - 数据相关：MySQL / Memcache / redis
 - 版本管理：Svn / Git / Composer
 - 服务器：拥有2台VPS主机，熟悉Linux的操作，熟悉LNMP环境搭建，熟悉PHP相关拓展安装使用如：APC / Swoole
