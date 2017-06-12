@@ -2,7 +2,7 @@
 
  - 周文龙 / 男 / 1993 
  - 专科 / 绍兴职业技术学院 计算机系 
- - 工作年限：2年
+ - 开发经验：2年
  - 技术博客：http://blog.iszwl.cn
  - Github: https://github.com/wenlongzhou
  - 联系方式：13122337903 / zwl1163235480@gmail.com
