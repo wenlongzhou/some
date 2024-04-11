@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OpenCV.js</title>
+        <style type="text/css">
+            .wrap-image {
+                display: flex;
+                flex-direction: row;
+                margin-top: 10px;
+            }
+            .wrap-image img,
+            .wrap-image canvas {
+                width: 800px;
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h3 id="status">Loading the Opencv ...</h3>
+        <input type="file" id="fileInput"/>
+        <div class="wrap-image">
+            <img id="canvasInput" alt="No Image" />
+            <canvas id="canvasOutput"></canvas>
+        </div>
+
+        <script type="text/javascript">
+            let imgElement = document.getElementById('canvasInput');
+            let inputElement = document.getElementById('fileInput');
+
+            inputElement.onchange = function() {
+              imgElement.src = URL.createObjectURL(event.target.files[0]);
+            }
+
+            imgElement.onload =function() {
+				let src = cv.imread('canvasInput');
+				let gray = new cv.Mat();
+				let binary = new cv.Mat();
+				let labels = new cv.Mat();
+				let stats = new cv.Mat();
+				let centroids = new cv.Mat();
+
+				// 转换为灰度图像
+				cv.cvtColor(src, gray, cv.COLOR_RGBA2GRAY, 0);
+				// 转换为二值图像
+				cv.threshold(gray, binary, 127, 255, cv.THRESH_BINARY_INV);
+
+				// 找出所有的连通部分
+				let numLabels = cv.connectedComponentsWithStats(binary, labels, stats, centroids, 8, cv.CV_32S);
+
+				let max = -1;
+				let maxLabel = 0;
+				for (let i = 1; i < numLabels; i++) {
+					let area = stats.intPtr(i, cv.CC_STAT_AREA)[0];
+					if (area > max) {
+						max = area;
+						maxLabel = i;
+					}
+				}
+
+				// 将非最大连通部分设为背景色
+				for (let r = 0; r < src.rows; r++) {
+					for (let c = 0; c < src.cols; c++) {
+						if (labels.ucharPtr(r, c)[0] != maxLabel) {
+							src.ucharPtr(r, c)[0] = 255;
+							src.ucharPtr(r, c)[1] = 255;
+							src.ucharPtr(r, c)[2] = 255;
+						}
+					}
+				}
+
+				cv.imshow('canvasOutput', src);
+				gray.delete(); binary.delete(); labels.delete(); stats.delete(); centroids.delete(); src.delete();
+            };
+            function onOpenCvReady() {
+                document.getElementById('status').remove();
+            }
+        </script>
+		<script async src="https://docs.opencv.org/master/opencv.js" onload="onOpenCvReady();" onerror="console.error('Error loading opencv.js');"></script>
+
+    </body>
+</html>
