@@ -25,6 +25,7 @@
         </div>
 
         <script type="text/javascript">
+	    //去除简笔画、线条画中未和主体连接的线
             let imgElement = document.getElementById('canvasInput');
             let inputElement = document.getElementById('fileInput');
 
